@@ -17,7 +17,7 @@ public class DatabaseController {
 //user login method 
 	public int getUserLoginInformation(String username, String password){
 		try(connection con = getConnection()){
-			PreparedStatement statement = con.prepareStatement(utils.Get_Login_User_Information);
+			PreparedStatement statement = con.prepareStatement(stringutils.LOGIN_QUERY);
 			statement.setString(1, username);
 			ResultSet result = statement.executeQuery();
 			if (result.next()) {
@@ -26,9 +26,9 @@ public class DatabaseController {
 				if (BCrypt.checkpw(password, hashedPasswordFromDb)) {
 					String userAccountType = result.getString("accountType");
 					if ("User".equals(userAccountType)) {
-						return 1;
+						return 1;//normal user
 					} else if ("Admin".equals(userAccountType)) {
-						return 5;
+						return 2;//admin
 					}
 				}
 			}
