@@ -14,4 +14,29 @@ public class DatabaseController {
 		String password = "";
 		return DriverManager.getConnection(url, user, password);
 	}
+//user login method 
+	public int getUserLoginInformation(String username, String password){
+		try(connection con = getConnection()){
+			PreparedStatement statement = con.prepareStatement(stringutils.LOGIN_QUERY);
+			statement.setString(1, username);
+			ResultSet result = statement.executeQuery();
+			if (result.next()) {
+				String hashedPasswordFromDb = result.getString("password");
+				System.out.println("Hashed Password" + hashedPasswordFromDb);
+				if (BCrypt.checkpw(password, hashedPasswordFromDb)) {
+					String userAccountType = result.getString("accountType");
+					if ("User".equals(userAccountType)) {
+						return 1;//normal user
+					} else if ("Admin".equals(userAccountType)) {
+						return 2;//admin
+					}
+				}
+			}
+			return 0; // Username or password is incorrect
+		}
+		catch(ClassNotFoundException | SQLException ex){
+			ex.printStackTrace();
+		}
+	}
+
 }
