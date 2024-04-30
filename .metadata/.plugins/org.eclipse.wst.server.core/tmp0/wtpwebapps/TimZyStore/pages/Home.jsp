@@ -24,8 +24,8 @@
         </div>
         <section class="hero">
             <div class="content">
-                <h1>Choose Timzy For <span>Luxurious Life</span></h1>
-                <p>Timzy is a well-reputed smartwatch brand renowned for its innovative design, cutting-edge technology, and user-friendly features.</p>
+                <h1>Choose TimZy For <span>Luxurious Life</span></h1>
+                <p>TimZy is a well-reputed smartWatch brand renowned for its innovative design, cutting-edge technology, and user-friendly features.</p>
                 <button>Explore More</button>
             </div>
             <div class="Img_box">

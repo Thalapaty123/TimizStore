@@ -194,3 +194,13 @@
 0:0:0:0:0:0:0:1 - - [30/Apr/2024:14:26:50 +0545] "GET /TimZyStore/pages/Login.jsp HTTP/1.1" 200 2457
 0:0:0:0:0:0:0:1 - - [30/Apr/2024:14:26:56 +0545] "GET /TimZyStore/pages/SignUp.jsp HTTP/1.1" 200 5098
 0:0:0:0:0:0:0:1 - - [30/Apr/2024:14:26:56 +0545] "GET /TimZyStore/images/hand.jpg HTTP/1.1" 404 785
+127.0.0.1 - - [30/Apr/2024:21:41:05 +0545] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [30/Apr/2024:21:41:07 +0545] "GET /TimZyStore/pages/Home.jsp HTTP/1.1" 200 1949
+0:0:0:0:0:0:0:1 - - [30/Apr/2024:21:41:07 +0545] "GET /TimZyStore/images/mark%20location.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Apr/2024:21:41:07 +0545] "GET /TimZyStore/Stylesheet/Style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Apr/2024:21:41:07 +0545] "GET /TimZyStore/images/smart%20watch.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Apr/2024:21:41:07 +0545] "GET /TimZyStore/images/heart%20pulse.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Apr/2024:21:41:07 +0545] "GET /TimZyStore/images/calories.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [30/Apr/2024:21:41:08 +0545] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [30/Apr/2024:21:41:10 +0545] "GET /TimZyStore/pages/watch.jsp HTTP/1.1" 404 749
+0:0:0:0:0:0:0:1 - - [30/Apr/2024:21:41:13 +0545] "GET /TimZyStore/pages/Product.jsp HTTP/1.1" 404 751
