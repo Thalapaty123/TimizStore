@@ -5,3 +5,7 @@
 0:0:0:0:0:0:0:1 - - [29/Apr/2024:09:01:05 +0545] "GET /Testing/Register.jsp HTTP/1.1" 200 5752
 0:0:0:0:0:0:0:1 - - [29/Apr/2024:09:01:05 +0545] "GET /Testing/reg.jpg HTTP/1.1" 404 770
 0:0:0:0:0:0:0:1 - - [29/Apr/2024:09:01:05 +0545] "GET /Testing/stylesheet/regLog.css HTTP/1.1" 404 788
+127.0.0.1 - - [29/Apr/2024:21:32:53 +0545] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [29/Apr/2024:21:32:55 +0545] "GET /TimZyStore/pages/SignUp.jsp HTTP/1.1" 200 2334
+0:0:0:0:0:0:0:1 - - [29/Apr/2024:21:33:22 +0545] "GET /TimZyStore/pages/SignUp.jsp HTTP/1.1" 200 5334
+0:0:0:0:0:0:0:1 - - [29/Apr/2024:21:33:22 +0545] "GET /TimZyStore/pages/SignUp.jsp HTTP/1.1" 200 5334

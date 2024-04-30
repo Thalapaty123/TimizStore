@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <style>
-      body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -15,7 +14,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f5f5f5;
+            background-color: #aaaaaa;
         }
 
         .container {
@@ -25,7 +24,7 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+            background-color: #7b9bf5;
         }
 
         .image-container {
@@ -34,12 +33,13 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background-color: #002f34;
+            background-color: #ffffff;
         }
 
-        .image-placeholder img {
-            max-width: 100%;
+        .image-container img {
+            width: 100%;
             height: auto;
+            object-fit: cover;
         }
 
         .form-container {
@@ -51,7 +51,7 @@
             margin-bottom: 30px;
             font-size: 24px;
             text-align: center;
-            color: #002f34;
+            color: #ffffff;
         }
 
         form {
@@ -62,7 +62,7 @@
         label {
             margin-bottom: 8px;
             font-size: 14px;
-            color: #002f34;
+            color: #ffffff;
         }
 
         input[type="text"],
@@ -71,7 +71,7 @@
         input[type="tel"],
         select {
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 2px solid #fcfcfc;
             border-radius: 5px;
             margin-bottom: 15px;
             font-size: 16px;
@@ -80,7 +80,7 @@
 
         select {
             appearance: none;
-            background: url('data:image/svg+xml;utf8,<svg fill="#002f34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') no-repeat right #fff;
+            background: url('data:image/svg+xml;utf8,<svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') no-repeat right #fff;
             background-size: 16px;
             padding-right: 30px;
         }
@@ -90,7 +90,7 @@
             align-items: center;
             margin-bottom: 20px;
             font-size: 14px;
-            color: #002f34;
+            color: #ffffff;
         }
 
         .checkbox-container input[type="checkbox"] {
@@ -116,25 +116,24 @@
             text-align: center;
             margin-top: 20px;
             font-size: 14px;
-            color: #002f34;
+            color: #ffffff;
         }
 
         a {
             color: #ff6d02;
             text-decoration: none;
         }
-        <!-- Your CSS styles here -->
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="image-container">
-            <div class="image-placeholder">
-                <img src="https://via.placeholder.com/400" alt="Daraz Image">
-            </div>
+            <!-- Replace the image source with a JSP expression -->
+            <img src="${pageContext.request.contextPath}/images/hand.jpg" alt="Background Image">
         </div>
         <div class="form-container">
-            <h1>Create Your Account</h1>
+            <h1>Create Your  Account</h1>
             <form action="#">
                 <label for="user-name">User Name</label>
                 <input type="text" id="user-name" name="user-name" required>
@@ -142,11 +141,6 @@
                 <input type="text" id="first-name" name="first-name" required>
                 <label for="last-name">Last Name</label>
                 <input type="text" id="last-name" name="last-name" required>
-                <label for="account-type">Account Type</label>
-                <select id="account-type" name="account-type" required>
-                    <option value="admin">Admin</option>
-                    <option value="user">User</option>
-                </select>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
                 <label for="phone-number">Phone Number</label>
@@ -160,7 +154,7 @@
                     <label for="agree-terms">I agree to the <a href="#">terms and conditions</a></label>
                 </div>
                 <button type="submit">Sign Up</button>
-                <p> Already have an Account <a href="Login.html">Login</a></p>
+                <p> Already have an Account <a href="Login.jsp">Login</a></p> <!-- Changed the file extension to .jsp -->
             </form>
         </div>
     </div>

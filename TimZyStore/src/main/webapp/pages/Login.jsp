@@ -16,6 +16,7 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
+            background-im
         }
 
         .login-container {
@@ -77,13 +78,13 @@
     <div class="login-container">
         <h2>Login</h2>
         <form action="#" method="post">
-            <label for="username">Username</label>
+            <label for="username">UserName</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
             <button type="submit">Login</button>
         </form>
-        <p>Don't have an account? <a href="signup.jsp">Register here</a></p>
+        <p>Don't have an account? <a href="SignUp.jsp">Register here</a></p>
     </div>
 </body>
 </html>
