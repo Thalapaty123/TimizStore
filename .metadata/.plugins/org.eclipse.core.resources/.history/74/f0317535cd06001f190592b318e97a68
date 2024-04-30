@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import org.mindrot.bcrypt.BCrypt;
+
 public class DatabaseController {
 //method to get connection to the database
 	public Connection getConnection() throws SQLException, ClassNotFoundException{

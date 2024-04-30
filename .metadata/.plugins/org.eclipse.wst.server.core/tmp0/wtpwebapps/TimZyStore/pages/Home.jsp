@@ -38,7 +38,7 @@
                     <h3>GPS Tracking</h3>
                 </div>
                 <div class="card">
-                    <<img src="${pageContext.request.contextPath}/images/heart pulse.png" alt="Smart Watch">img src="heart pulse.png" alt="">
+                    <<img src="${pageContext.request.contextPath}/images/heart pulse.png" alt="Smart Watch">
                     <h3>Heart Rate Sensor</h3>
                 </div>
                 <div class="card">
