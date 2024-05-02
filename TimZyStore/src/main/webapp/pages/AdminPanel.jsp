@@ -10,7 +10,7 @@
     <!-- My CSS -->
      <link rel="stylesheet" href="<%= request.getContextPath() %>/Stylesheet/AdminPanel.css">
 
-    <title>Admin</title>
+    <title>AdminPanel</title>
 </head>
 <body>
 
