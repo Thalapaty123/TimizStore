@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="<%= request.getContextPath() %>/Stylesheet/user.css">
 </head>
 <body>
+
 <div class="container">
   <div class="profile">
     <div class="profile-details">

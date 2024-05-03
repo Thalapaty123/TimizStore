@@ -18,9 +18,9 @@
                 <li><a href="watch.jsp">Home</a></li>
                 <li><a href="Product.jsp">Product</a></li>
                 <li><a href="#">About Us</a></li>
+                <li><a href="#" id="profile-link"><i class="fa-solid fa-user"></i></a></li>
+                li><a href="{% url "view_cart"%}"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 <li><a href="#">LogOut</a></li>
-                 <li><a href="#" id="profile-link"><i class="fa-solid fa-user"></i></a></li>
-                <li><a href="{% url "view_cart"%}"><i class="fa-solid fa-cart-shopping"></i></a></li>
                
             </ul>
             <button> Get Started</button>
