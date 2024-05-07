@@ -8,7 +8,7 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- My CSS -->
-     <link rel="stylesheet" href="<%= request.getContextPath() %>/Stylesheet/AdminPanel.css">
+     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/AdminPanel.css">
 
     <title>AdminPanel</title>
 </head>
@@ -19,50 +19,50 @@
 <section id="sidebar">
     <a href="#" class="brand">
         <i class='bx bxs-smile'></i>
-        <span class="text">Admin</span>
+        <span class="text"> Admin</span>
     </a>
     <ul class="side-menu top">
         <li class="active">
             <a href="#">
                 <i class='bx bxs-dashboard' ></i>
-                <span class="text">Dashboard</span>
+                <span class="text"> Dashboard</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="${pageContext.request.contextPath}/DisplayProductAdmin">
                 <i class='bx bxs-shopping-bag-alt' ></i>
-                <span class="text">My Store</span>
+                <span class="text"> Display Products</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="${pageContext.request.contextPath}/AddBrandsServlet">
                 <i class='bx bxs-doughnut-chart' ></i>
-                <span class="text">Categories</span>
+                <span class="text"> Manage Brands</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="${pageContext.request.contextPath}/DisplayMessageServlet">
                 <i class='bx bxs-message-dots' ></i>
-                <span class="text">Message</span>
+                <span class="text"> Message</span>
             </a>
         </li>
        
     </ul>
     <ul class="side-menu">
         <li>
-            <a href="#">
+            <a href="${pageContext.request.contextPath}/pages/AddProducts.jsp">
                 <i class='bx bxs-cog' ></i>
                 <span class="text">Add Product</span>
             </a>
         </li>
         <li>
-            <a href="#" class="Admin">
+            <a href="${pageContext.request.contextPath}/pages/AdminRegistration.jsp" class="Admin">
                 <i class='bx bxs-log-out-circle' ></i>
                 <span class="text">Add Admin</span>
             </a>
         </li>
         <li>
-            <a href="#" class="logout">
+            <a href="${pageContext.request.contextPath}/LogOutServlet" class="logout">
                 <i class='bx bxs-log-out-circle' ></i>
                 <span class="text">Logout</span>
             </a>
@@ -91,7 +91,7 @@
             <span class="num">8</span>
         </a>
         <a href="#" class="profile">
-            <img src="img/people.png">
+            <img src="https://gifdb.com/images/high/profile-pic-zero-two-cute-smiling-anime-girl-0xasiqei8p4kvjfi.gif">
         </a>
     </nav>
     <!-- NAVBAR -->
@@ -118,14 +118,14 @@
             <li>
                 <i class='bx bxs-calendar-check' ></i>
                 <span class="text">
-                    <h3>1020</h3>
-                    <p>Add Product</p>
+                    <h3><span><%=request.getAttribute("productCount")%></span></h3>
+                    <p>Total Products</p>
                 </span>
             </li>
             <li>
                 <i class='bx bxs-group' ></i>
                 <span class="text">
-                    <h3>2834</h3>
+                    <h3><span><%=request.getAttribute("customerCount")%></span></h3>
                     <p>Total User</p>
                 </span>
             </li>

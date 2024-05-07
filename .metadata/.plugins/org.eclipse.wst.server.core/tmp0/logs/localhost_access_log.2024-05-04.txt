@@ -1,0 +1,13 @@
+127.0.0.1 - - [04/May/2024:09:22:04 +0545] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [04/May/2024:09:22:06 +0545] "GET /TimZyStore/pages/aboutus.jsp HTTP/1.1" 200 1739
+0:0:0:0:0:0:0:1 - - [04/May/2024:09:22:06 +0545] "GET /TimZyStore/pages/try.png HTTP/1.1" 404 783
+0:0:0:0:0:0:0:1 - - [04/May/2024:09:22:06 +0545] "GET /TimZyStore/Stylesheet/aboutus.css HTTP/1.1" 200 1629
+0:0:0:0:0:0:0:1 - - [04/May/2024:09:24:11 +0545] "GET /TimZyStore/pages/aboutus.jsp HTTP/1.1" 200 1783
+0:0:0:0:0:0:0:1 - - [04/May/2024:09:24:11 +0545] "GET /TimZyStore/Stylesheet/aboutus.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [04/May/2024:09:24:11 +0545] "GET /TimZyStore/images/try.png HTTP/1.1" 200 196006
+127.0.0.1 - - [04/May/2024:11:25:43 +0545] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [04/May/2024:11:25:45 +0545] "GET /TimZyStore/pages/Login.jsp HTTP/1.1" 200 2469
+0:0:0:0:0:0:0:1 - - [04/May/2024:11:25:45 +0545] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [04/May/2024:11:25:48 +0545] "POST /TimZyStore/LoginServlet HTTP/1.1" 500 4219
+0:0:0:0:0:0:0:1 - - [04/May/2024:11:25:55 +0545] "GET /TimZyStore/pages/SignUp.jsp HTTP/1.1" 200 4976
+0:0:0:0:0:0:0:1 - - [04/May/2024:11:26:39 +0545] "POST /TimZyStore/UserRegisterServlet HTTP/1.1" 404 785

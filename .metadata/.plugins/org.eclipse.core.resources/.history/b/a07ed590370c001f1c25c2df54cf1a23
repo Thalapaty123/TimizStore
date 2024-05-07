@@ -1,0 +1,128 @@
+body, h1, h2, h3, h4, h5, h6, .card-title a {
+            font-family: 'Poppins', sans-serif; /* Consistent font throughout */
+            background: linear-gradient(45deg, rgb(0, 0, 0), #268f5b, rgb(0, 0, 0), black); ;
+        }
+        h1.text-center {
+            color:white
+        }
+        h4.card-title{
+            color: white;
+        }
+        p{
+            color:white;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,.1); /* Subtle shadow */
+            transition: transform .3s ease-in-out; /* Smooth transition for hover effect */
+            border: none; /* Removes the default border */
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Slightly raise the card on hover */
+            border-color: #007bff; /* Highlight with a border color on hover */
+        }
+        .description {
+            color: #495057; /* A softer dark for the description */
+            font-size: 0.9rem; /* Appropriately sized font for descriptions */
+            font-weight: 400; /* Regular weight for a clean look */
+        }
+        hr {
+            margin: 1rem 0; /* Adjust spacing around the horizontal rule */
+            border-top: 1px solid #a5b4c2; /* Lighter hr color for subtlety */
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-body {
+            padding: 15px;
+            text-align: center; /* Center align card content */
+        }
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 0.9em;
+            color: #555;
+        }
+        .category-image {
+            height: 200px; /* Increase image container height for better display */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .category-image img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain; /* Ensure entire image is visible within container */
+        }
+        /* Remove underline from links */
+        .card-title a {
+            text-decoration: none;
+        }
+        .card-price {
+            display: inline-block;
+            width: auto;
+            height: 30px;
+            background-color: #6ab070;
+            border-radius: 3px 4px 4px 3px;
+            border-left: 1px solid #6ab070;
+            margin-left: 19px;
+            position: relative;
+            color: white;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 30px;
+            padding: 0 10px; /* Adjusted padding */
+        }
+        /* Makes the triangle */
+        .card-price:before {
+            content: "";
+            position: absolute;
+            display: block;
+            left: -20px; /* Adjusted position */
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 15px solid #0d024e;
+        }
+        /* Makes the circle */
+        .card-price:after {
+            content: "";
+            background-color: white;
+            border-radius: 50%;
+            width: 3px;
+            height: 3px;
+            display: block;
+            position: absolute;
+            left: -10px; /* Adjusted position */
+            top: 13px;
+        }
+        .btn {
+            margin-top: 10px;
+        }
+        /* Navbar */
+        .navbar {
+            margin-bottom: 20px;
+            color: white;
+        }
+        /* Footer */
+        footer {
+            margin-top: 20px;
+            background-color: #000000;
+            padding: 20px 0;
+            text-align: center;
+        }
+        container{
+        	display:flex;
+        
+        }

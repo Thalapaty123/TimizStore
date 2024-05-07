@@ -1,50 +1,63 @@
 package controller.servlets;
-import java.io.IOException;
 
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import stringutils.StringUtils;
+import controller.DatabaseController;
+import utils.StringUtils;
 
-@WebServlet("/UserLogin")
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    controller.DatabaseController dbController = new controller.DatabaseController();
-
+	controller.DatabaseController dbController = new DatabaseController();
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public LoginServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // Handle POST requests here
-        String username = request.getParameter("user_name");
-        String password = request.getParameter("password");
-
-        int loginResult = dbController.getUserLoginInformation(username, password);
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String username = request.getParameter(StringUtils.user_name);
+        String password = request.getParameter(StringUtils.password);
+        System.out.println(username);
+        System.out.println(password);
+        int login_result = dbController.getUserLogin(username, password);
+        System.out.println("login result is :" + login_result);
         
-        if (loginResult == 1) {
+
+        if (login_result == 1) {
             request.getSession().setAttribute("username", username);
-            // Set session timeout (optional)
-//            session.setMaxInactiveInterval(30 * 60); // 30 minutes
-            response.sendRedirect(request.getContextPath() + Utilities.HOME_PAGE);
+            request.getSession().setMaxInactiveInterval(30 * 60); //setting the maximum session timeout to 30 minutes
+            response.sendRedirect(request.getContextPath() + StringUtils.HOME_PAGE);
         } 
-        else if (loginResult == 2) {
+        else if (login_result == 2) {
             request.getSession().setAttribute("username", username);
-            response.sendRedirect(request.getContextPath() + "/pages/Admin.jsp");
+            response.sendRedirect(request.getContextPath() + StringUtils.HOME_ADMIN_SERVLET);
         } 
-        else if (loginResult == 0) {
-            request.setAttribute(Utilities.ERROR_MESSAGE, Utilities.INCORRECT_LOGIN_CREDENTIAL_ERROR);
+        else if (login_result == 0) {
+            request.setAttribute(StringUtils.ERROR_MESSAGE, StringUtils.INCORRECT_LOGIN_CREDENTIAL_ERROR);
             System.out.println("Username or Password Incorrect");
-            request.getRequestDispatcher(Utilities.LOGIN_PAGE).forward(request, response);
+            request.getRequestDispatcher(StringUtils.LOGIN_PAGE).forward(request, response);
         } 
         else {
-            request.setAttribute(Utilities.ERROR_MESSAGE, Utilities.SERVER_ERROR_MESSAGE);
-            request.getRequestDispatcher(Utilities.LOGIN_PAGE).forward(request, response);
+            request.setAttribute(StringUtils.ERROR_MESSAGE, StringUtils.SERVER_ERROR_MESSAGE);
+            request.getRequestDispatcher(StringUtils.LOGIN_PAGE).forward(request, response);
         }
-    }
+        
+        
+	}
+
 }

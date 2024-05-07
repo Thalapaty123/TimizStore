@@ -16,7 +16,14 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
-            background-im
+   			background-image: url('${pageContext.request.contextPath}/images/login.jpg.jpeg');
+   			
+			    /* Ensure the background image covers the entire body */
+			    background-size: cover;
+			    /* Center the background image */
+			    background-position: center;
+			}
+            
         }
 
         .login-container {
@@ -31,12 +38,15 @@
             margin-bottom: 20px;
             font-size: 24px;
             text-align: center;
+            color: #fff;
+            
         }
 
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
+            color:  #fff;
         }
 
         input[type="text"],
@@ -70,6 +80,11 @@
             margin-top: 15px;
             text-align: center;
             font-size: 14px;
+            color: #fff;
+            font:bold;
+        }
+        a{
+        	  color: orange;
         }
         <!-- Your CSS styles here -->
     </style>
@@ -77,14 +92,14 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="#" method="post">
-            <label for="username">UserName</label>
+        <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
+            <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
             <button type="submit">Login</button>
         </form>
-        <p>Don't have an account? <a href="SignUp.jsp">Register here</a></p>
+        <p>Don't have an account? <a href="${pageContext.request.contextPath}/pages/SignUp.jsp">Register here</a></p>
     </div>
 </body>
 </html>

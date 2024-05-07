@@ -1,0 +1,14 @@
+1714800038888	Rename type 'RegisterUserServlet'
+1714801086273	Delete element
+1714801092112	Delete element
+1714801453732	Rename resource 'stringutils'
+1714801566434	Move 'AddBrandsServlet.java' to 'filter'
+1714801571039	Move 'AddBrandsServlet.java' to 'servles'
+1714801576188	Move 'AddProductServlet.java' to 'servles'
+1714801579590	Move 'AdminUserRegistrationServlet.java' to 'servles'
+1714801583048	Move 'UserRegistrationServlet.java' to 'servles'
+1714801670132	Delete element
+1714801691654	Delete element
+1714801814282	Delete element
+1714801887071	Delete element
+1714802910469	Rename resource 'servles'
