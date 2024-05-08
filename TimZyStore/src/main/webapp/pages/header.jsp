@@ -7,22 +7,29 @@
 
 body, html {
     height: 100%;
+    width:100%;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
+    body:100%
     margin: 0 auto;
     padding: 0 20px;
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    
 }
 
 .navbar {
     background-color: #333;
     padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
 }
 
 .navlist {
@@ -43,6 +50,11 @@ body, html {
 
 .navlist li a:hover {
     color: #ccc;
+}
+
+.logo img {
+    width: 100px; /* Adjust according to your logo size */
+    height: auto;
 }
 
 button {
@@ -90,8 +102,7 @@ button {
 .card h3 {
     margin-top: 10px;
 }
-
-/* Add your additional styles here */
+}
 
 
 </style>

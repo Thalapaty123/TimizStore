@@ -71,7 +71,7 @@ public class AdminUserRegistrationServlet extends HttpServlet {
 		System.out.println("result is: "+result);
 		
 		if (result == 1) {
-		    request.setAttribute(StringUtils.SUCCESS_MESSAGE, StringUtils.SUCCESSFULLY_REGISTERED_MESSAGE);
+		    request.setAttribute(StringUtils.SUCCESS_MESSAGE, "New Admin was Added Successfully");
 		    response.sendRedirect(request.getContextPath() + StringUtils.LOGIN_PAGE);
 		} 
 		else if (result == 0) {

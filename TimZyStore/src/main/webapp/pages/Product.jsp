@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="models.ProductModel" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,14 +39,31 @@
                 </li>
             </ul>
             <!-- Search form -->
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" action="${pageContext.request.contextPath}/SearchServlet" method="get">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
     </div>
 </nav>
 <!-- End Navbar -->
+<div class="display-result">
+        <h1>Search Results</h1>
+        <% 
+        List<ProductModel> searchResults = (List<ProductModel>) request.getAttribute("search_result");
+        if (searchResults != null) {
+            for (ProductModel product : searchResults) { %>
+                <div>
+                    <h3><%= product.getProduct_name() %></h3>
+                    <p>Description: <%= product.getProduct_description() %></p>
+                    <p>Price: <%= product.getPrice() %></p>
+                </div>
+            <% }
+        } else { %>
+            <p>No results found.</p>
+        <% }
+        %>
+    </div>
 
 <div class="container">
     <div class="row">
@@ -100,9 +119,7 @@
                             <span class="description float-start">ScreenSize:</span>
                             <span class="description float-start">Watch Color:</span><br>
                             <span class="description float-start">Features:</span>
-
                             </span>
-                        
                             <div style="clear:both;"></div>
                             <button class="btn btn-primary">Add to Cart</button>
                             <button class="btn btn-success">Buy Now</button>

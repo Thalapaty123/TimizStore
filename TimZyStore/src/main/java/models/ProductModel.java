@@ -18,6 +18,7 @@ public class ProductModel {
 	private String connectivity;
 	private String os;
 	private String features;
+	private String watch_color;
 	
 	
 	private String getProductPicName(Part part) {
@@ -42,7 +43,7 @@ public class ProductModel {
 
 	//primary constructor used for saving the product
 	public ProductModel(String product_name, String product_description, double price, int quantity, int brand_id,
-			Part product_pic, double screen_size, String connectivity, String os, String features) {
+			Part product_pic, double screen_size, String connectivity, String os, String features, String watch_color) {
 		super();
 		this.product_name = product_name;
 		this.product_description = product_description;
@@ -54,6 +55,7 @@ public class ProductModel {
 		this.connectivity = connectivity;
 		this.os = os;
 		this.features = features;
+		this.watch_color = watch_color;
 	}
 
 	public int getProduct_id() {
@@ -108,8 +110,8 @@ public class ProductModel {
 		return product_image;
 	}
 
-	public void setProduct_image(String product_image) {
-		this.product_image = product_image;
+	public void setProduct_image(Part part) {
+		this.product_image = getProductPicName(part);
 	}
 
 	public double getScreen_size() {
@@ -142,6 +144,44 @@ public class ProductModel {
 
 	public void setFeatures(String features) {
 		this.features = features;
+	}
+	public String getWatch_color() {
+		return watch_color;
+	}
+
+	public void setWatch_color(String watch_color) {
+		this.watch_color = watch_color;
+	}
+	//use this constructor to get all the informations
+
+
+	public ProductModel(int product_id, String product_name, String product_description, double price, int quantity,
+			int brand_id, String product_image, double screen_size, String connectivity, String os, String features, String watch_color) {
+		super();
+		this.product_id = product_id;
+		this.product_name = product_name;
+		this.product_description = product_description;
+		this.price = price;
+		this.quantity = quantity;
+		this.brand_id = brand_id;
+		this.product_image = product_image;
+		this.screen_size = screen_size;
+		this.connectivity = connectivity;
+		this.os = os;
+		this.features = features;
+		this.watch_color = watch_color;
+	}
+	//used for search 
+
+	public ProductModel(int product_id, String product_name, String product_description, double price, int quantity,
+			String product_image) {
+		super();
+		this.product_id = product_id;
+		this.product_name = product_name;
+		this.product_description = product_description;
+		this.price = price;
+		this.quantity = quantity;
+		this.product_image = product_image;
 	}
 	
 }

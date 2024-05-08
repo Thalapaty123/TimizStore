@@ -16,14 +16,6 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
-   			background-image: url('${pageContext.request.contextPath}/images/login.jpg.jpeg');
-   			
-			    /* Ensure the background image covers the entire body */
-			    background-size: cover;
-			    /* Center the background image */
-			    background-position: center;
-			}
-            
         }
 
         .login-container {
@@ -38,15 +30,12 @@
             margin-bottom: 20px;
             font-size: 24px;
             text-align: center;
-            color: #fff;
-            
         }
 
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
-            color:  #fff;
         }
 
         input[type="text"],
@@ -80,11 +69,6 @@
             margin-top: 15px;
             text-align: center;
             font-size: 14px;
-            color: #fff;
-            font:bold;
-        }
-        a{
-        	  color: orange;
         }
         <!-- Your CSS styles here -->
     </style>
