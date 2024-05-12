@@ -16,6 +16,20 @@
             margin: 0;
             padding: 0;
         }
+        /* Back button */
+.back-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
         .container {
             width: 80%;
             margin: 20px auto;
@@ -100,6 +114,7 @@
         }
     </style>
 </head>
+ <a href="${pageContext.request.contextPath}/pages/AdminPanel.jsp" class="back-button">Admin Panel</a>
 <body>
     <div class="container">
         <div class="error-message">

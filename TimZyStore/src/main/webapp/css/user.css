@@ -59,6 +59,7 @@ body {
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
+    gap:10px;
   }
   
   button:hover {
@@ -130,4 +131,33 @@ body {
   .container {
     background: linear-gradient(to bottom right, #bfefff, #ffffff); /* Light blue gradient */
   }
+  /* Style for the Purchase History button */
+#purchase-history-btn {
+    margin-top: 10px;
+    margin-right: 10px; /* Add space between buttons */
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Style for the Edit Profile button */
+#edit-profile-btn {
+    margin-top: 10px;
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    space-between:20px;
+}
   

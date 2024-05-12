@@ -90,9 +90,9 @@ public class StringUtils {
 
 	//uploaded picture store dir
 	//Users\\Asian\\
-	public static final String PROFILE_PIC_DIR = "\\Users\\HeheHe\\eclipse-workspace\\TimZyStore\\src\\main\\webapp\\Uploads\\ProfilePictures\\";
+	public static final String PROFILE_PIC_DIR = "\\Users\\Asian\\eclipse-workspace\\TimZyStore\\src\\main\\webapp\\Uploads\\ProfilePictures\\";
 	public static final String PROFILE_PIC_SAVE_DIR = "C:" + File.separator + PROFILE_PIC_DIR;
-	public static final String PRODUCT_PIC_DIR = "Users\\HeheHe\\eclipse-workspace\\TimZyStore\\src\\main\\webapp\\Uploads\\ProductPictures\\";
+	public static final String PRODUCT_PIC_DIR = "Users\\Asian\\eclipse-workspace\\TimZyStore\\src\\main\\webapp\\Uploads\\ProductPictures\\";
 	public static final String PRODUCT_PIC_SAVE_DIR = "C:" + File.separator + PRODUCT_PIC_DIR;
 	
 	public static final String LOGIN_PAGE = "/pages/Login.jsp";
@@ -122,6 +122,13 @@ public class StringUtils {
     public static final String PRODUCT_DELETED_MESSAGE = "The proudct was deletd";
     public static final String USERANME_ALREADY_EXISTS_MESSAGE = "The user already exists";
     // End string messages
+	public static final String Update_Product = "UPDATE product "
+			+ "SET "
+			+ "product_name = ?, "
+			+ "WHERE "
+			+ " product_id = ?";
+			
+	public static final String Delete_Product = "Delete * from product where product_id=?";		
 	
 
 }

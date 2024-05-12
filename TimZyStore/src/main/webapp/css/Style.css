@@ -141,7 +141,43 @@ footer {
     height: auto;
     margin: 0 10px;
 }
+/* Style for list items */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
+/* Style for list item links */
+li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Style for link icons */
+a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #333; /* Change color as needed */
+    background-color: #fff; /* Change background color as needed */
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for link icons on hover */
+a:hover {
+    background-color: #007bff; /* Change hover background color as needed */
+    color: #fff; /* Change hover color as needed */
+}
+
+/* Style for link icons inside list items */
+#profile-link i,
+#cart-link i {
+    font-size: 20px;
+}
 .copyright {
     color: white;
     font-size: 20px;

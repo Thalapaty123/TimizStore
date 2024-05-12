@@ -2,11 +2,12 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+<jsp:include page="footer.jsp" />
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shopping Cart</title>
-<link rel="stylesheet" href="<%= request.getContextPath() %>/Stylesheet/addtocart.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/addtocart.css">
 <style>
   /* Your CSS styles here */
 </style>

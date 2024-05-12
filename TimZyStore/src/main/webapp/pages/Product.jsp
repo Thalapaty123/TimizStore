@@ -132,7 +132,7 @@
     </div>
 </div>
 
-<%@ include file="footer.jsp" %> <!-- Assuming you have a footer.jsp file for the footer -->
+
 
 </body>
 </html>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <style>
-      body {
+     body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -16,8 +16,7 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f5f5f5;
-            	background-image: url('${pageContext.request.contextPath}/images/Apple Watch.jpeg');
-   			
+            background-image:url("${pageContext.request.contextPath}/images/Apple Watch.jpeg")
         }
 
         .container {
@@ -37,6 +36,7 @@
             justify-content: center;
             overflow: hidden;
             background-color: #002f34;
+            background-image:url("${pageContext.request.contextPath}/images/signup.jpg.jpeg")
         }
 
         .image-placeholder img {
@@ -48,6 +48,7 @@
             flex: 1;
             padding: 40px;
         }
+        ima
 
         h1 {
             margin-bottom: 30px;
@@ -82,7 +83,7 @@
 
         select {
             appearance: none;
-            background: url('/images/Apple Watch.jpeg') no-repeat right #fff;
+            background: url('data:image/svg+xml;utf8,<svg fill="#002f34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') no-repeat right #fff;
             background-size: 16px;
             padding-right: 30px;
         }
@@ -132,7 +133,7 @@
     <div class="container">
         <div class="image-container">
             <div class="image-placeholder">
-                <img src="${pageContext.request.contextPath}/images/Apple Watch.jpeg" alt="Daraz Image">
+                <img src="Apple Watch.jpeg" alt="Daraz Image">
             </div>
         </div>
         <div class="form-container">

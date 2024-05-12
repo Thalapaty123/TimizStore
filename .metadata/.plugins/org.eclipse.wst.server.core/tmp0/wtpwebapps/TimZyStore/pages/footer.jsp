@@ -1,71 +1,76 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>  
-    <style>
-    /* Footer Styles */
-.footer {
-    background-color: #f4f4f4;
-    padding: 50px 0;
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<style>
+ nav {
+    background-color: #000000;
+    color: #fff;
+    padding: 0px 0;
+    width:100%;
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+nav .logo {
+    font-size: 1.5rem;
+    margin-left: 20px;
 }
 
-.company-description, .contact-info {
-    width: 45%;
-}
-
-.company-description h2, .contact-info h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.company-description p {
-    color: #666;
-}
-
-.contact-info ul {
+nav ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
+    text-align: right;
 }
 
-.contact-info ul li {
-    margin-bottom: 10px;
+nav ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
-.footer-bottom {
-    background-color: #ddd;
-    padding: 10px 0;
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #000000;
+    color: #fff;
     text-align: center;
-    margin-top: 30px;
-}
-
-.footer-bottom p {
-    font-size: 14px;
-    color: #666;
-}
+    padding: 0px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 23px;
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar and Footer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">TimZy</div>
     
-    </style>
-    <footer class="footer">
-    <div class="footer-container">
-        <div class="company-description">
-            <h2>About TimZy</h2>
-            <p>TimZy is a leading brand in smartwatch technology, dedicated to providing innovative and stylish wearable devices that enhance everyday life. Our commitment to quality and customer satisfaction drives us to continually push the boundaries of what's possible in wearable technology.</p>
+      <ul>
+        <li><a href="${pageContext.request.contextPath}/pages/Index.jsp">Home</a></li>
+        <li><a href="<%= request.getContextPath() %>/DisplayProductUser">Products</a></li>
+        <li><a href="<%= request.getContextPath() %>/pages/AboutUs.jsp">About Us</a></li>
+        <li><a href="<%= request.getContextPath() %>/UserProfile"><i class="fas fa-user"></i></a></li>
+        <li><a href="<%= request.getContextPath() %>/UserCartServlet"><i class="fas fa-shopping-cart"></i></a></li>
+    </ul>
+       <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button><i class="fas fa-search"></i></button>
         </div>
-        <div class="contact-info">
-            <h2>Contact Us</h2>
-            <ul>
-                <li>Email: info@timzy.com</li>
-                <li>Phone: +977 987726351</li>
-                <li>Address: 123 Smartwatch Street, City, Country</li>
-            </ul>
+    </nav>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 WatchZone. All rights reserved.</p>
+            <p>Contact us: contact@watchzone.com</p>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 TimZy. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
+</body>
+</html>

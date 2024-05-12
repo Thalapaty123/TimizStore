@@ -113,7 +113,47 @@ public class DatabaseController {
 	    }
 	    return count;
 	}
-
+	public void editProduct(ProductModel product) {
+		 try {Connection con = getConnection();
+		         PreparedStatement statement = con.prepareStatement(StringUtils.Update_Product);
+				 statement.setString(1, product.getProduct_name());
+				 statement.setInt(2, product.getProduct_id()); 
+				 System.out.println(product.getProduct_name());
+//					statement.setString(2, product.getProduct_description());
+//					statement.setDouble(3, product.getPrice());
+//					statement.setInt(4, product.getQuantity());
+//					statement.setInt(5, product.getBrand_id());
+//					statement.setString(6, product.getProduct_image());
+//					statement.setDouble(7, product.getScreen_size());
+//					statement.setString(8, product.getConnectivity());
+//					statement.setString(9, product.getOs());
+//					statement.setString(10, product.getFeatures());
+//					statement.setString(11, product.getWatch_color());
+	}catch (ClassNotFoundException | SQLException e) {
+        e.printStackTrace();
+    }
+	}
+	public void deleteProduct(ProductModel product) {
+		 try {Connection con = getConnection();
+		         PreparedStatement statement = con.prepareStatement(StringUtils.Delete_Product);
+//				 statement.setString(1, product.getProduct_name());
+				 statement.setInt(1, product.getProduct_id()); 
+				 System.out.println(product.getProduct_id());
+//					statement.setString(2, product.getProduct_description());
+//					statement.setDouble(3, product.getPrice());
+//					statement.setInt(4, product.getQuantity());
+//					statement.setInt(5, product.getBrand_id());
+//					statement.setString(6, product.getProduct_image());
+//					statement.setDouble(7, product.getScreen_size());
+//					statement.setString(8, product.getConnectivity());
+//					statement.setString(9, product.getOs());
+//					statement.setString(10, product.getFeatures());
+//					statement.setString(11, product.getWatch_color());
+	}catch (ClassNotFoundException | SQLException e) {
+       e.printStackTrace();
+   }
+	}
+	
 	public int getCustomerCount() {
 	    int count = 0;
 	    try (Connection con = getConnection();

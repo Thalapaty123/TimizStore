@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <style>
-      body {
+     body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -16,6 +16,7 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f5f5f5;
+            background-image:url("${pageContext.request.contextPath}/images/Apple Watch.jpeg")
         }
 
         .container {
@@ -35,6 +36,7 @@
             justify-content: center;
             overflow: hidden;
             background-color: #002f34;
+            background-image:url("${pageContext.request.contextPath}/images/signup.jpg.jpeg")
         }
 
         .image-placeholder img {
@@ -46,6 +48,7 @@
             flex: 1;
             padding: 40px;
         }
+        ima
 
         h1 {
             margin-bottom: 30px;
@@ -130,7 +133,7 @@
     <div class="container">
         <div class="image-container">
             <div class="image-placeholder">
-                <img src="https://via.placeholder.com/400" alt="Daraz Image">
+                <img src="Apple Watch.jpeg" alt="Daraz Image">
             </div>
         </div>
         <div class="form-container">

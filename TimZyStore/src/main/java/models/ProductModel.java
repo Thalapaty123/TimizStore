@@ -40,7 +40,12 @@ public class ProductModel {
 		}
 		return productPicUrlFromPath;	
 }
-
+	
+	public ProductModel(int product_id, String product_name) {
+		// TODO Auto-generated constructor stub
+		this.product_id = product_id;
+		this.product_name = product_name;
+	}
 	//primary constructor used for saving the product
 	public ProductModel(String product_name, String product_description, double price, int quantity, int brand_id,
 			Part product_pic, double screen_size, String connectivity, String os, String features, String watch_color) {
@@ -183,5 +188,12 @@ public class ProductModel {
 		this.quantity = quantity;
 		this.product_image = product_image;
 	}
+
+	public ProductModel(int product_id) {
+		// TODO Auto-generated constructor stub
+		this.product_id=product_id;
+	}
+	
+	
 	
 }

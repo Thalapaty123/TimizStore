@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-    body {
+     body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -16,20 +16,15 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
-   			background-image: url('${pageContext.request.contextPath}/images/login.jpg.jpeg');
-   			
-			    /* Ensure the background image covers the entire body */
-			    background-size: cover;
-			    /* Center the background image */
-			    background-position: center;
-			}
-            
+            background-image: url("${pageContext.request.contextPath}/images/login.jpg.jpeg");
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
         }
-
-        .login-container {
+      .login-container {
             width: 300px;
             padding: 20px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -38,15 +33,12 @@
             margin-bottom: 20px;
             font-size: 24px;
             text-align: center;
-            color: #fff;
-            
         }
 
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
-            color:  #fff;
         }
 
         input[type="text"],
@@ -80,11 +72,6 @@
             margin-top: 15px;
             text-align: center;
             font-size: 14px;
-            color: #fff;
-            font:bold;
-        }
-        a{
-        	  color: orange;
         }
         <!-- Your CSS styles here -->
     </style>

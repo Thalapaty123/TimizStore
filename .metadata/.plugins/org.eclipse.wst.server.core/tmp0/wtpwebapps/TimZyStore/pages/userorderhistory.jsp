@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Order History</title>
-<link rel="stylesheet" href="<%= request.getContextPath() %>/Stylesheet/orderhhistory.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/orderhhistory.css">
+<jsp:include page="footer.jsp" />
 <style>
   /* Your CSS styles here */
 </style>
