@@ -79,6 +79,22 @@ public class StringUtils {
 			+ "WHERE o.order_id = ?";
 	//search query
 	public static final String SEARCH_QUERY = "SELECT * FROM product WHERE product_name LIKE ?";
+	//get user account type 
+	public static final String GET_USER_ACCOUNT_CATEGORY = "select account_category from user WHERE user_id = ?";
+	//query to get the purchase history of a customer
+	public static final String GET_PURCHASE_HISTORY_OF_USER = "SELECT o.order_id, "
+			+ "o.order_date, "
+			+ "o.quantity, "
+			+ "o.total_amount, "
+			+ "pr.product_image, "
+			+ "pr.price, "
+			+ "o.status, "
+			+ "pr.product_name "
+			+ "FROM orders o "
+			+ "JOIN Product pr ON o.product_id = pr.product_id "
+			+ "WHERE o.user_id = ?;";
+	
+	
 	
 	//constants 
 	public static final String user_name = "username";
@@ -128,7 +144,8 @@ public class StringUtils {
 			+ "WHERE "
 			+ " product_id = ?";
 			
-	public static final String Delete_Product = "Delete * from product where product_id=?";		
+	public static final String Delete_Product = "Delete * from product where product_id=?";
+	public static final String ADMIN_HOME_SERVLET = "/HomeAdmin";		
 	
 
 }

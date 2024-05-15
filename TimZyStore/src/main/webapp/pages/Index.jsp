@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="javax.servlet.ServletException" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.Objects" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +12,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Watch</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/Style.css">
- 
-    
     <!-- Include Font Awesome CSS -->
-    
 </head>
 <body>
+<% 
+    // Check if session attribute accountType is Admin
+    if (Objects.equals(request.getSession().getAttribute("accountType"), "Admin")) {
+        // Redirect to login page
+        response.sendRedirect(request.getContextPath() + "/pages/Login.jsp");
+    } else {
+    %>
     <div class="container">
         <div class="ecommerce-name"></div>
         <div class="navbar">
@@ -25,12 +36,10 @@
                 <% } else { %>
                 <li><a href="${pageContext.request.contextPath}/LogOutServlet">Logout</a></li>
                 <% } %>
-                   <li><a href="${pageContext.request.contextPath}/UserProfile">User</a></li>
-                 <li><a href="${pageContext.request.contextPath}UserCartServlet">Cart</a></li>
+                <li><a href="${pageContext.request.contextPath}/UserProfile">User</a></li>
+                <li><a href="${pageContext.request.contextPath}/UserCartServlet">Cart</a></li>
             </ul>
             <!-- User Profile and Cart Links -->
-            
-            </ul>
             <!-- Get Started Button -->
             <button> Get Started</button>
         </div>
@@ -60,5 +69,6 @@
             </div>
         </section>
     </div>
+    <% } %>
 </body>
 </html>

@@ -144,7 +144,7 @@
             	<input type="hidden" value="<%= product.getProduct_id()%>" name="product_id">
             	<input type="hidden" value = 1 name="quantity">
             	<input type="hidden" value =<%= product.getPrice() %> name="price">
-            	<input type="hidden" value="<%= session.getAttribute("user_id") %>" name="user_id">
+            	<input type="hidden" value="<%= session.getAttribute("userId") %>" name="user_id">
             	<button type="submit" class="btn btn-success">Buy Now</button>
             </form>
         </div>

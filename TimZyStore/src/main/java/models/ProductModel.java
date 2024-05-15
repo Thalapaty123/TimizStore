@@ -193,7 +193,13 @@ public class ProductModel {
 		// TODO Auto-generated constructor stub
 		this.product_id=product_id;
 	}
-	
-	
-	
+	public ProductModel(int product_id, String product_name, String product_description, double price, int quantity) {
+		super();
+		this.product_id = product_id;
+		this.product_name = product_name;
+		this.product_description = product_description;
+		this.price = price;
+		this.quantity = quantity;
+	}
+			
 }

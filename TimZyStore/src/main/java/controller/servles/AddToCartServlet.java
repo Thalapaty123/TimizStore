@@ -30,36 +30,37 @@ public class AddToCartServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = (String) request.getSession().getAttribute("username");
-        if (username != null) {
-        	System.out.println("Username is : " + username);
-        }
-        else {
-        	System.out.println("user is not logged in");
-            // Redirect to the login page
-            response.sendRedirect(request.getContextPath() + "/pages/Login.jsp");
-        }
+		
+        
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-    	int product_id = Integer.parseInt(request.getParameter("product_id"));
-    	int quantity = Integer.parseInt(request.getParameter("quantity"));
-    	int user_id = Integer.parseInt(request.getParameter("user_id"));
-    	
-    	CartModel cartModel = new CartModel(user_id ,product_id, quantity);
-    	int result = dbController.addProductToCart(cartModel);
-        if (result == 1) {
-            request.setAttribute("successMessage", "Product added to cart successfully");
-        } 
+		String username = (String) request.getSession().getAttribute("username");
+		if (username != null) {
+        	System.out.println("Username is : " + username);
+        	int product_id = Integer.parseInt(request.getParameter("product_id"));
+        	int quantity = Integer.parseInt(request.getParameter("quantity"));
+        	int user_id = (int) request.getSession().getAttribute("userId");
+        	System.out.println(user_id + "in add to cart servlet");
+        	
+        	CartModel cartModel = new CartModel(user_id ,product_id, quantity);
+        	int result = dbController.addProductToCart(cartModel);
+            if (result == 1) {
+                request.setAttribute("successMessage", "Product added to cart successfully");
+            } 
+            else {
+                request.setAttribute("errorMessage", "Failed to add product to cart");
+            }
+            request.getRequestDispatcher("/DisplayProductUser").forward(request, response);
+    	}
         else {
-            request.setAttribute("errorMessage", "Failed to add product to cart");
+        	System.out.println("user is not logged in");
+            // Redirect to the login page
+            response.sendRedirect(request.getContextPath() + "/pages/Login.jsp");
         }
-        request.getRequestDispatcher("/DisplayProductUser").forward(request, response);
-	}
-
+    	
+}
 }

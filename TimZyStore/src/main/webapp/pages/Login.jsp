@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="utils.StringUtils" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,7 +78,12 @@
     </style>
 </head>
 <body>
+
     <div class="login-container">
+    <div class="formm">
+      	<% if (request.getAttribute(StringUtils.ERROR_MESSAGE) != null) { %>
+    	<p class="errorMessage"><%= request.getAttribute(StringUtils.ERROR_MESSAGE) %></p>
+		<% } %>
         <h2>Login</h2>
         <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
             <label for="username">Username</label>

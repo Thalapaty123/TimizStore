@@ -37,7 +37,7 @@ public class SearchServlet extends HttpServlet {
 		System.out.println(keyword);
 		List<ProductModel> searchResults = dbController.getResultFromSearch(keyword);
 		request.setAttribute("search_result", searchResults);
-		request.getRequestDispatcher("/pages/Product.jsp").forward(request, response);
+		request.getRequestDispatcher("/pages/SearchResult.jsp").forward(request, response);
 	}
 
 }

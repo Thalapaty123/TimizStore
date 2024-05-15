@@ -35,7 +35,7 @@ public class UserCartServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-	    int user_id = (int) session.getAttribute("user_id"); // Assuming "user_id" is stored in the session
+	    int user_id = (int) session.getAttribute("userId"); // Assuming "user_id" is stored in the session
 	    List<DisplayCartModel> cart_details = dbController.getUsersCartDetails(user_id);
 	    
 	    // Set the attribute in the request to pass the list of cart details to the JSP

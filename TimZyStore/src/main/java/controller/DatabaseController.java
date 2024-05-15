@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ import models.CartModel;
 import models.DisplayCartModel;
 import models.OrderModel;
 import models.ProductModel;
+import models.PurchaseHistroyModel;
 import models.UserModel;
 import utils.StringUtils;
 
@@ -452,5 +454,131 @@ public class DatabaseController {
 		}
 		return result;
 	}
+	
+	public String getAccountType(int userId) {
+	    String accountType = null;
+	        try (Connection con = getConnection()) {
+	            PreparedStatement statement = con.prepareStatement(StringUtils.GET_USER_ACCOUNT_CATEGORY);
+	            statement.setInt(1, userId);
+	            ResultSet resultSet = statement.executeQuery();
+	            if (resultSet.next()) {
+	                accountType = resultSet.getString("account_category");
+	                System.out.println("User account type is : " + accountType);
+	            }
+	        }
+	        catch (ClassNotFoundException | SQLException e) {
+		        e.printStackTrace();
+		    }
+		    return accountType;
+		}
+	
+//	public List<UserCartModel> getUserCartInfo(int userIdNum){
+//		List<UserCartModel> userCartDetails = new ArrayList<>();
+//		try(Connection con = getConnection()){
+//			PreparedStatement statement = con.prepareStatement(StringUtils.GET_USER_CART_INFO);
+//			statement.setInt(1, userIdNum);
+//			ResultSet resultSet = statement.executeQuery();
+//			while(resultSet.next()) {
+//				int userId = resultSet.getInt("userId");
+//				int productId = resultSet.getInt("productId");
+//				String productName = resultSet.getString("productName");
+//				String productImage = resultSet.getString("productImage");
+//				int quantity = resultSet.getInt("quantity");
+//				Double price = resultSet.getDouble("price");
+//				Double totalAmount= price * quantity;
+//				UserCartModel userCartDetailsModel = new UserCartModel(productId, userId, productName, 
+//				productImage, price, quantity, totalAmount);
+//				userCartDetails.add(userCartDetailsModel);
+//			}
+//		} catch (ClassNotFoundException | SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return userCartDetails;
+//	}
 
+	public List<PurchaseHistroyModel> getUserPruchaseHistroy(int userId){
+		List<PurchaseHistroyModel> purchaseHistroy = new ArrayList<>();
+		try(Connection con = getConnection()){
+			PreparedStatement statement = con.prepareStatement(StringUtils.GET_PURCHASE_HISTORY_OF_USER);
+			statement.setInt(1, userId);
+			ResultSet resultSet = statement.executeQuery();
+			while(resultSet.next()) {
+				int order_id = resultSet.getInt("order_id");
+				Timestamp order_date = resultSet.getTimestamp("order_date");
+				int quantity = resultSet.getInt("quantity");
+				Double total_amount = resultSet.getDouble("total_amount");
+				String product_name = resultSet.getString("product_name");
+				Double price = resultSet.getDouble("price");
+				String status = resultSet.getString("status");
+				String product_image = resultSet.getString("product_image");
+				
+				PurchaseHistroyModel purchaseHistroyModel = new PurchaseHistroyModel(order_id, order_date, quantity, total_amount,product_name, price, 
+						status, product_image);
+				purchaseHistroy.add(purchaseHistroyModel);
+			}
+		}
+		catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return purchaseHistroy;
+	}
+	public int getLatestPurchaseId() {
+	    int latestPurchaseId = -1; // Default value if no purchase found
+	    
+	    try (Connection con = getConnection()) {
+	        PreparedStatement statement = con.prepareStatement("SELECT order_id FROM orders order by order_date desc LIMIT 1;");
+	        ResultSet resultSet = statement.executeQuery();
+	        
+	        if (resultSet.next()) {
+	           int latestOrderId = resultSet.getInt("order_id");
+	           return  latestOrderId;
+	        }
+	    } catch (SQLException | ClassNotFoundException e) {
+	        e.printStackTrace(); // HWandle or log the exception as needed
+	    }
+		return latestPurchaseId;
+	}
+
+	public List<PurchaseHistroyModel> getLatestPurchase(int latestOrderId){
+		List<PurchaseHistroyModel> latestPurchase = new ArrayList<>();
+		try(Connection con = getConnection()){
+			PreparedStatement statement = con.prepareStatement("select * from orders where order_id = ?");
+			statement.setInt(1, latestOrderId);
+			ResultSet resultSet = statement.executeQuery();
+			while(resultSet.next()) {
+				
+			}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (ClassNotFoundException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
+		return latestPurchase;
+}
+	public int deleteProduct(int prodId) {
+	    try (Connection con = getConnection()) {
+	        PreparedStatement st = con.prepareStatement("DELETE FROM product WHERE product_id = ?");
+	        st.setInt(1, prodId);
+
+	        int result = st.executeUpdate();
+	        if (result > 0) {
+	            System.out.println("Product with ID " + prodId + " deleted successfully.");
+	            return 1; // Return 1 if deletion is successful
+	        } else {
+	            System.out.println("Product deletion failed or product with ID " + prodId + " does not exist.");
+	            return 0; // Return 0 if deletion failed or product does not exist
+	        }
+	    } catch (SQLException | ClassNotFoundException ex) {
+	        System.err.println("An error occurred while deleting product with ID " + prodId + ": " + ex.getMessage());
+	        ex.printStackTrace(); // Log the exception stack trace
+	        return -1; // Return -1 for any exceptions
+	    }
+	}
+
+	    
 }

@@ -149,10 +149,11 @@
                         </form>
 
                         <br>
-                        <form action="DeleteProductServlet" method="post">
-                            <input type="hidden" name="productId" value="<%= product.getProduct_id() %>">
-                            <button type="submit">delete</button>
-                        </form>
+						<form id="deleteForm<%=product.getProduct_id()%>" method="post" action="${pageContext.request.contextPath}/ModifyProductServlet">
+					    <input type="hidden" name="productId" value="<%=product.getProduct_id()%>">
+					    <input type="hidden" name="action" value="Delete" > 
+					    <button  value="submit">Delete</button>
+						</form>
                     </td>
                 </tr>
             <% 

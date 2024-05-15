@@ -55,14 +55,16 @@ footer {
     
       <ul>
         <li><a href="${pageContext.request.contextPath}/pages/Index.jsp">Home</a></li>
-        <li><a href="<%= request.getContextPath() %>/DisplayProductUser">Products</a></li>
-        <li><a href="<%= request.getContextPath() %>/pages/AboutUs.jsp">About Us</a></li>
-        <li><a href="<%= request.getContextPath() %>/UserProfile"><i class="fas fa-user"></i></a></li>
-        <li><a href="<%= request.getContextPath() %>/UserCartServlet"><i class="fas fa-shopping-cart"></i></a></li>
+        <li><a href="${pageContext.request.contextPath}/DisplayProductUser">Products</a></li>
+        <li><a href="${pageContext.request.contextPath}/pages/AboutUs.jsp">About Us</a></li>
+        <li><a href="${pageContext.request.contextPath}/UserProfile"><i class="fas fa-user"></i></a></li>
+        <li><a href="${pageContext.request.contextPath}/UserCartServlet"><i class="fas fa-shopping-cart"></i></a></li>
     </ul>
        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button><i class="fas fa-search"></i></button>
+       <form action="${pageContext.request.contextPath}/SearchServlet" method="GET">
+            <input type="text" placeholder="Search..." name="keyword">
+            <button type="submit"><i class="fas fa-search"></i></button>
+         </form>
         </div>
     </nav>
 
